@@ -4,10 +4,7 @@ from Industry_Safety_Detection.exception import isdException
 from Industry_Safety_Detection.configuration.s3_operations import S3Operation
 from Industry_Safety_Detection.components.data_ingestion import DataIngestion
 
-
-
 from Industry_Safety_Detection.entity.config_entity import (DataIngestionConfig)
-
 
 
 from Industry_Safety_Detection.entity.artifacts_entity import (DataIngestionArtifact)
@@ -47,7 +44,7 @@ class TrainPipeline:
         
     def run_pipeline(self) -> None:
         try:    
-            data_ingestion_atrifact = self.data_ingestion()
+            data_ingestion_atrifact = self.start_data_ingestion()
         except Exception as e:
             raise isdException(e, sys)
         
